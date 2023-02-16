@@ -1,6 +1,14 @@
 import mongoose from "mongoose";
 
 const UserDateDataModel = new mongoose.Schema({
+  userId: {
+    type: String,
+    required: true,
+  },
+  companyId: {
+    type: String,
+    required: true,
+  },
   enterTime: {
     type: String,
     required: true,
@@ -27,6 +35,10 @@ const UserDateDataModel = new mongoose.Schema({
   date: {
     type: Date,
     default: Date.now,
+  },
+  dayDate: {
+    type: String,
+    required: true,
   },
 });
 

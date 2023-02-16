@@ -2,6 +2,7 @@ import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "../systems/dBConnection";
+import datesRouter from "../routes/dateRouts";
 
 dotenv.config();
 
@@ -14,6 +15,8 @@ app.use(express.json());
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
 });
+
+app.use("/api", datesRouter);
 
 connectDB().then(() => {
   console.log("🔵 MongoDB connected...");
