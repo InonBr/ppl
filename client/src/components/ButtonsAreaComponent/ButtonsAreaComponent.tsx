@@ -17,8 +17,6 @@ export const ButtonsAreaComponent = () => {
     getWorkingStatus();
   }, []);
 
-  console.log(workStatus);
-
   const clickEventsHandler = async (
     buttonName: "createNewEntry" | "break" | "goodByeForToday"
   ) => {
@@ -43,7 +41,11 @@ export const ButtonsAreaComponent = () => {
       )}
 
       {workStatus && (
-        <Button className="m-2" variant="danger">
+        <Button
+          className="m-2"
+          variant="danger"
+          onClick={() => clickEventsHandler("goodByeForToday")}
+        >
           סיום משמרת
         </Button>
       )}

@@ -6,6 +6,21 @@ import { updateUsersWorkingStatus } from "../repositories/usrs";
 
 const datesRouter = Router();
 
+datesRouter.put(
+  "/endJob/:companyId/:id",
+  async (req: Request, res: Response) => {
+    const { id, companyId } = req.params;
+
+    await paramsSchema.validate(
+      { id, companyId },
+      {
+        abortEarly: false,
+        stripUnknown: true,
+      }
+    );
+  }
+);
+
 datesRouter.post(
   "/enterWork/:companyId/:id",
   async (req: Request, res: Response) => {
