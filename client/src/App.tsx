@@ -1,7 +1,9 @@
+import { ButtonsAreaComponent } from "./components/ButtonsAreaComponent/ButtonsAreaComponent";
+
 function App() {
   return (
     <div className="App">
-      <h1>hello world</h1>
+      <ButtonsAreaComponent />
     </div>
   );
 }
