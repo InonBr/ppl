@@ -1,8 +1,8 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import connectDB from "../systems/dBConnection";
-import datesRouter from "../routes/dateRouts";
+import connectDB from "./systems/dBConnection";
+import datesRouter from "./routes/dateRouts";
 
 dotenv.config();
 
