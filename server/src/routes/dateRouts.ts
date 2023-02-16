@@ -2,6 +2,7 @@ import { Request, Response, Router } from "express";
 import { ValidationError } from "yup";
 import { paramsSchema } from "../systems/schemas";
 import { createNewEntry } from "../repositories/dates";
+import { updateUsersWorkingStatus } from "../repositories/usrs";
 
 const datesRouter = Router();
 
@@ -20,6 +21,7 @@ datesRouter.post(
       );
 
       const newMongoId = await createNewEntry({ userId: id, companyId });
+      updateUsersWorkingStatus(id);
 
       res.send({ newMongoId, id, companyId });
     } catch (err) {

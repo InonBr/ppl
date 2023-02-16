@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./systems/dBConnection";
 import datesRouter from "./routes/dateRouts";
+import usersRouter from "./routes/usersRoutes";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use("/api", datesRouter);
+app.use("/api", usersRouter);
 
 connectDB().then(() => {
   console.log("🔵 MongoDB connected...");
