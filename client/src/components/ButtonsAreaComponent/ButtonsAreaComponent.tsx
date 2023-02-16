@@ -32,13 +32,21 @@ export const ButtonsAreaComponent = () => {
 
   return (
     <>
-      <Button
-        className="m-2"
-        variant="success"
-        onClick={() => clickEventsHandler("createNewEntry")}
-      >
-        כניסה למשמרת
-      </Button>
+      {!workStatus && (
+        <Button
+          className="m-2"
+          variant="success"
+          onClick={() => clickEventsHandler("createNewEntry")}
+        >
+          כניסה למשמרת
+        </Button>
+      )}
+
+      {workStatus && (
+        <Button className="m-2" variant="danger">
+          סיום משמרת
+        </Button>
+      )}
     </>
   );
 };
